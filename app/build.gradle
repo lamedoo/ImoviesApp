@@ -68,7 +68,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
 
-    def /**/lifecycle_version = "2.3.0"
+    def /**/
+            lifecycle_version = "2.3.0"
     implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -111,15 +112,17 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx'
     implementation 'com.google.firebase:firebase-storage-ktx'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.google.android.gms:play-services-cast-framework:19.0.0', {
+        exclude group: 'com.google.protobuf'//, module: 'protobuf-lite'
+    }
     implementation 'com.eightbitlab:blurview:1.6.6'
     implementation "androidx.cardview:cardview:1.0.0"
 
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-    implementation 'com.google.android.exoplayer:exoplayer:2.12.2'
-    implementation 'com.google.android.exoplayer:extension-cast:2.9.6'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.google.android.exoplayer:exoplayer:2.13.2'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.xiaofeng.android:flowlayoutmanager:1.2.3.2'
 

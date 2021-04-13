@@ -50,7 +50,7 @@ open class BaseVideoPlayerFragmentNew(fragment: Int) : Fragment(fragment) {
     private val buildMediaSource: BuildMediaSource by inject()
 
     private lateinit var mediaPlayer: MediaPlayerClass
-    private lateinit var player: SimpleExoPlayer
+    protected lateinit var player: SimpleExoPlayer
     private lateinit var playerView: PlayerView
     private var tracker: ProgressTrackerNew? = null
 

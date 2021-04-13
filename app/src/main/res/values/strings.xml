@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">StreamFlow</string>
     <string name="default_data">N/A</string>
+    <string name="cast_app_id">DE6F9AAB</string>
 
 <!--    <string name="default_web_client_id">700559852856-68iooe5pueka6q1k3oejuc46h4fh9dai.apps.googleusercontent.com</string>-->
 </resources>
