@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/video_player_background"
-    android:visibility="visible"
     android:paddingTop="12dp"
     android:paddingBottom="12dp"
+    android:visibility="visible"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
@@ -28,12 +28,12 @@
             android:id="@+id/phone_exo_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/transparent"
             android:src="@drawable/ic_arrow_back"
             android:tint="@color/white"
-            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="@id/header_tv"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/header_tv"
-            app:layout_constraintBottom_toBottomOf="@id/header_tv"/>
+            app:layout_constraintTop_toTopOf="@id/header_tv" />
 
         <TextView
             android:id="@+id/header_tv"
@@ -42,26 +42,37 @@
             android:layout_gravity="center"
             android:ellipsize="end"
             android:maxLines="2"
-            android:textColor="@color/white"
-            android:textSize="15sp"
             android:shadowColor="@color/trueBlack"
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius="3"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/white"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Funny Anim Videos" />
 
         <ImageButton
             android:id="@+id/phone_subtitle_toggle"
-            android:src="@drawable/exo_subtitles_off"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/transparent"
-            app:layout_constraintTop_toTopOf="@id/header_tv"
+            android:src="@drawable/exo_subtitles_off"
             app:layout_constraintBottom_toBottomOf="@id/header_tv"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toStartOf="@+id/media_route_button"
+            app:layout_constraintTop_toTopOf="@id/header_tv" />
+
+        <androidx.mediarouter.app.MediaRouteButton
+            android:id="@+id/media_route_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:mediaRouteTypes="user"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/header_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/header_tv"
+            tools:visibility="visible" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -76,19 +87,19 @@
     <ImageButton
         android:id="@id/exo_prev"
         style="@style/ExoMediaButton.Previous"
-        android:layout_height="0dp"
         android:layout_width="0dp"
-        android:src="@drawable/exo_previous"
+        android:layout_height="0dp"
         android:layout_margin="10dp"
         android:background="@drawable/exo_buttons_focused"
+        android:src="@drawable/exo_previous"
         app:layout_constraintBottom_toBottomOf="@id/exo_play"
         app:layout_constraintRight_toLeftOf="@+id/exo_rew"
-        app:layout_constraintTop_toTopOf="@id/exo_play"/>
+        app:layout_constraintTop_toTopOf="@id/exo_play" />
 
     <ImageButton
         android:id="@+id/phone_prev_button"
-        android:layout_height="55dp"
         android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_margin="10dp"
         android:background="@drawable/exo_buttons_focused"
         android:src="@drawable/exo_previous"
@@ -100,11 +111,11 @@
     <ImageButton
         android:id="@+id/exo_rew"
         style="@style/ExoMediaButton.Rewind"
-        android:layout_height="55dp"
         android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginRight="40dp"
-        android:src="@drawable/exo_rewind"
         android:background="@drawable/exo_buttons_focused"
+        android:src="@drawable/exo_rewind"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/exo_play"
         app:layout_constraintRight_toLeftOf="@+id/barrier_left"
@@ -113,11 +124,11 @@
     <ImageButton
         android:id="@+id/exo_ffwd"
         style="@style/ExoMediaButton.FastForward"
-        android:layout_height="55dp"
         android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="40dp"
-        android:src="@drawable/exo_forward"
         android:background="@drawable/exo_buttons_focused"
+        android:src="@drawable/exo_forward"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/exo_play"
         app:layout_constraintLeft_toRightOf="@+id/barrier_right"
@@ -126,22 +137,22 @@
     <ImageButton
         android:id="@id/exo_next"
         style="@style/ExoMediaButton.Next"
-        android:layout_height="0dp"
         android:layout_width="0dp"
-        android:src="@drawable/exo_next"
+        android:layout_height="0dp"
         android:layout_margin="10dp"
         android:background="@drawable/exo_buttons_focused"
+        android:src="@drawable/exo_next"
         app:layout_constraintBottom_toBottomOf="@id/exo_play"
         app:layout_constraintLeft_toRightOf="@+id/exo_ffwd"
-        app:layout_constraintTop_toTopOf="@id/exo_play"/>
+        app:layout_constraintTop_toTopOf="@id/exo_play" />
 
     <ImageButton
         android:id="@+id/phone_next_button"
-        android:layout_height="55dp"
         android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_margin="10dp"
-        android:nextFocusLeft="@id/tv_subtitle_toggle"
         android:background="@drawable/exo_buttons_focused"
+        android:nextFocusLeft="@id/tv_subtitle_toggle"
         android:src="@drawable/exo_next"
         app:layout_constraintBottom_toBottomOf="@id/exo_play"
         app:layout_constraintLeft_toRightOf="@+id/exo_ffwd"
@@ -160,8 +171,8 @@
         style="@style/ExoMediaButton.Play"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/exo_play"
         android:background="@drawable/exo_buttons_focused"
+        android:src="@drawable/exo_play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -172,8 +183,8 @@
         style="@style/ExoMediaButton.Pause"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/exo_pause"
         android:background="@drawable/exo_buttons_focused"
+        android:src="@drawable/exo_pause"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -209,17 +220,17 @@
             android:id="@+id/exo_progress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:bar_height="1dp"
             android:layout_gravity="center"
             android:layout_marginStart="7dp"
             android:layout_marginLeft="7dp"
             android:layout_marginEnd="7dp"
             android:layout_marginRight="7dp"
             android:layout_weight="1"
+            app:bar_height="1dp"
             app:buffered_color="@color/white"
             app:played_color="@color/accent_color"
-            app:scrubber_enabled_size="12dp"
             app:scrubber_color="@color/accent_color"
+            app:scrubber_enabled_size="12dp"
 
             app:unplayed_color="@color/lb_grey" />
 
@@ -259,8 +270,6 @@
             tools:text="dssdd" />
 
     </LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
